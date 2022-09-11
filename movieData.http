@@ -10,5 +10,8 @@ Content-Type: application/json
   "movieName": "Jurassic Park",
   "leadActor": "Jeff Goldblum"
 }
+###
+
+GET http://localhost:3000/
 
 

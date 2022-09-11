@@ -96,7 +96,7 @@ app.get("/directors", async (request, response) => {
   const getDirectorRes = await db.all(getDirectorsQuery);
   response.send(getDirectorRes.map((eachArr) => directorList(eachArr)));
 });
-//api 7
+// API 7
 const movieNamefun = (eachobject) => {
   return {
     movieName: eachobject.movie_name,
@@ -104,9 +104,9 @@ const movieNamefun = (eachobject) => {
 };
 app.get("/directors/:directorId/movies/", async (request, response) => {
   const { directorId } = request.params;
-  const getMoviedirector = ` SELECT * FROM movie 
+  const getMovieDirector = ` SELECT * FROM movie 
     WHERE director_id = ${directorId}`;
-  const getResponse = await db.all(getMoviedirector);
+  const getResponse = await db.all(getMovieDirector);
   response.send(getResponse.map((eachobject) => movieNamefun(eachobject)));
 });
 
